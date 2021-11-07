@@ -4,13 +4,13 @@ resource "null_resource" "myscript" {
   }
   provisioner "remote-exec" {
     inline = [
-      "echo r1soft installation",
+      "echo jenkins installation",
     ]
   }
   connection {
     type        = "ssh"
     user        = "centos"
     private_key = file("~/.ssh/id_rsa")
-    host        = aws_instance.r1soft.public_ip
+    host        = aws_instance.jenkins.public_ip
   }
 }

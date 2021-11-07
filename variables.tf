@@ -1,7 +1,7 @@
 variable "region" {
   type        = string
   description = "Please provide a region for instances"
-  default     = "us-east-1"
+  default     = "ap-northeast-1" #tokyo
 }
 variable "key_name" {
   type        = string

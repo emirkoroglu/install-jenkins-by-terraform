@@ -1,4 +1,4 @@
-resource "aws_security_group" "r1softsecurity" {
+resource "aws_security_group" "jenkinsecurity" {
   name        = var.sec_group_name
   description = "Allow TLS inbound traffic"
 

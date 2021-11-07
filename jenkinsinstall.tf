@@ -3,11 +3,11 @@ resource "aws_instance" "jenkins" {
   instance_type = "t3.micro"
   key_name      = aws_key_pair.bastion_host3.key_name
   # associate_public_ip_address = true
-  availability_zone = "us-east-1a"
+  availability_zone = "ap-northeast-1a"
 
   vpc_security_group_ids = [aws_security_group.jenkinsecurity.id]
 
-  #copy r1softrepohost file to install repo
+  #run jenkins.sh file
   provisioner "file" {
     source      = "./jenkins.sh"
     destination = "/tmp/jenkins.sh"
@@ -16,7 +16,7 @@ resource "aws_instance" "jenkins" {
     type        = "ssh"
     user        = "centos"
     private_key = file("~/.ssh/id_rsa")
-    host        = aws_instance.r1soft.public_ip
+    host        = aws_instance.jenkins.public_ip
   }
 
   # run the following commands
