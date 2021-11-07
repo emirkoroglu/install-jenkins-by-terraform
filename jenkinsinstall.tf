@@ -1,9 +1,9 @@
 resource "aws_instance" "jenkins" {
   ami           = data.aws_ami.centos.id
-  instance_type = "t3.micro"
-  key_name      = aws_key_pair.bastion_host3.key_name
+  instance_type = "m5.large"
+  key_name      = var.key_name
   # associate_public_ip_address = true
-  availability_zone = "ap-northeast-1a"
+  availability_zone = "us-east-1a"
 
   vpc_security_group_ids = [aws_security_group.jenkinsecurity.id]
 
@@ -20,17 +20,19 @@ resource "aws_instance" "jenkins" {
   }
 
   # run the following commands
-  provisioner "remote-exec" {
-    inline = [
-      "sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key",
-      "sudo yum upgrade -y",
-      "sudo yum install epel-release java-11-openjdk-develsudo yum install epel-release java-11-openjdk-devel -y",
-      "sudo yum install jenkins",
-      "sudo systemctl start jenkins",
-    ]
-  }
-
-  tags = {
-    Name = "jenkins"
-  }
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat-stable/jenkins.repo",
+  #     "sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key",
+  #     "sudo yum upgrade -y",
+  #     "sudo yum install epel-release java-11-openjdk-devel -y",
+  #     "sudo yum install jenkins -y",
+  #     "sudo systemctl daemon-reload",
+  #     "sudo systemctl start jenkins",
+  #     "sudo systemctl enable jenkins",
+  #   ]
+  # }
+  # tags = {
+  #   Name = "jenkins"
+  # }
 }
