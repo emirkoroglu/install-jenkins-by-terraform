@@ -1,13 +1,13 @@
 # Shows AMI ID
-output "CENTOS_ID" {
+output "Centos_ID" {
   value = data.aws_ami.centos.id
 }
-output "Host_Address" {
+output "Jenkins_Public_IP" {
   value = aws_instance.jenkins.public_ip
 }
-output "region" {
+output "Region" {
   value = "us-east-1"
 }
-output "records" {
+output "Login_to_Jenkins" {
   value = aws_route53_record.jenkins.name
 }

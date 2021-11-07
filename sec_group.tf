@@ -1,6 +1,6 @@
 resource "aws_security_group" "jenkinsecurity" {
   name        = var.sec_group_name
-  description = "Allow TLS inbound traffic"
+  description = "Allow TLS inbound traffic for Jenkins"
 
   ingress {
     description = "SSH"
