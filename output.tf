@@ -11,3 +11,7 @@ output "region" {
 output "records" {
   value = aws_route53_record.jenkins.records
 }
+output "jenkins" {
+  description = "Jenkins Admin Password"
+  value = "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
+}

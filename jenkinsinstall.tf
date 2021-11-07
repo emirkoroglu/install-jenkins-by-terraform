@@ -27,7 +27,6 @@ resource "aws_instance" "jenkins" {
       "sudo yum install epel-release java-11-openjdk-develsudo yum install epel-release java-11-openjdk-devel -y",
       "sudo yum install jenkins",
       "sudo systemctl start jenkins",
-      "sudo cat /var/lib/jenkins/secrets/initialAdminPassword",
     ]
   }
 
