@@ -5,8 +5,8 @@ resource "aws_s3_bucket" "b" {
   versioning {
     enabled = true
   }
-
+                      #  You need to add your Jenkins host machine IP to below
   website {
-    redirect_all_requests_to = "3.89.101.78:8080"
+    redirect_all_requests_to = "PUTJENKINSHOSTIPHERE:8080"
   }
 }
