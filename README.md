@@ -1,4 +1,5 @@
-# install-jenkins-by-terraform --- Red Hat / CentOS --
+# Install Jenkins on a Red Hat or CentOS machine.
+
 This is Long Term Support release for Red Hat / CentOS
 
 A LTS (Long-Term Support) release is chosen every 12 weeks from the stream of regular releases as the stable release for that time period. It can be installed from the redhat-stable yum repository.
