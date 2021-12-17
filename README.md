@@ -1,4 +1,4 @@
-# Install Jenkins on a Red Hat or CentOS machine.
+# Install Jenkins and use Route53 and S3 static website to route your domain address to Jenkins machine.
 
 This is Long Term Support release for Red Hat / CentOS
 
