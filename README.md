@@ -15,7 +15,7 @@ Admin Login Password;
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
-# Install Script Only For Red Hat / CentOS
+# Install Script Only For Red Hat / CentOS 
 
 sudo yum install wget -y
 
